@@ -1,23 +1,23 @@
 import 'package:flutter/material.dart';
 
 class BookHomeView extends StatefulWidget {
-
   @override
-  State<StatefulWidget> createState() {
-    // TODO: implement createState
+  _BookHomeView createState() => _BookHomeView();
+}
 
-  }
-
+class _BookHomeView extends State<BookHomeView> {
   @override
   Widget build(BuildContext context) {
-    // This method is rerun every time setState is called, for instance as done
-    // by the _incrementCounter method above.
-    //
-    // The Flutter framework has been optimized to make rerunning build methods
-    // fast, so that you can just rebuild anything that needs updating rather
-    // than having to individually change instances of widgets.
-    return ListView(
-
-    );
+    return BookHomeListView;
   }
 }
+
+ListView BookHomeListView = ListView.builder(
+    itemCount: 15,
+    padding: EdgeInsets.fromLTRB(20.0, 20.0, 20.0, 20.0),
+    itemExtent: 60.0,
+    itemBuilder: (BuildContext context, int index){
+  return Card(
+    child: Center(child: Text("你好 $index"),),
+  );
+});
